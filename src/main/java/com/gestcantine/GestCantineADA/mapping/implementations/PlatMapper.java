@@ -5,9 +5,11 @@ import com.gestcantine.GestCantineADA.dtos.PlatDTO;
 import com.gestcantine.GestCantineADA.mapping.contracts.IPlatMapper;
 import com.gestcantine.GestCantineADA.models.Menu;
 import com.gestcantine.GestCantineADA.models.Plat;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
+@RequiredArgsConstructor
 @Component
 public class PlatMapper implements IPlatMapper {
     private ModelMapper modelMapper ;
