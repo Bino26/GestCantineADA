@@ -50,7 +50,7 @@ The application provides the following endpoints for managing `Menu` and `Plat` 
 
 1. Clone the repository:
     ```bash
-    git clone https://your-repository-link.git
+    git clone https://github.com/Bino26/GestCantineADA.git 
     ```
 
 2. Navigate into the project directory:
