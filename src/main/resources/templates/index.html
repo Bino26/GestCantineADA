@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -63,7 +66,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white " href="pages/menus.html">
+                <a class="nav-link text-white " th:href="@{/menus}">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <span class="material-symbols-outlined">menu_book</span>
@@ -75,7 +78,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white " href="pages/plats.html">
+                <a class="nav-link text-white " th:href="@{/plats}">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <span class="material-symbols-outlined">local_cafe</span>
