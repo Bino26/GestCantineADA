@@ -709,3 +709,47 @@ Caused by: org.hibernate.AnnotationException: Association 'com.gestcantine.GestC
 2024-09-05T16:14:31.087Z  INFO 5272 --- [GestCantineADA] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-09-05T16:14:31.094Z  INFO 5272 --- [GestCantineADA] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-09-05T16:14:31.114Z  INFO 5272 --- [GestCantineADA] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-09-05T17:39:16.448Z  INFO 10168 --- [GestCantineADA] [restartedMain] c.g.G.GestCantineAdaApplication          : Starting GestCantineAdaApplication using Java 17.0.12 with PID 10168 (C:\Users\BINO BINO\Desktop\GestCantineADA\target\classes started by BINO BINO in C:\Users\BINO BINO\Desktop\GestCantineADA)
+2024-09-05T17:39:16.476Z  INFO 10168 --- [GestCantineADA] [restartedMain] c.g.G.GestCantineAdaApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-09-05T17:39:16.986Z  INFO 10168 --- [GestCantineADA] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-05T17:39:16.987Z  INFO 10168 --- [GestCantineADA] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-05T17:39:23.554Z  INFO 10168 --- [GestCantineADA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-05T17:39:24.388Z  INFO 10168 --- [GestCantineADA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 714 ms. Found 2 JPA repository interfaces.
+2024-09-05T17:39:28.122Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-05T17:39:28.226Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-05T17:39:28.227Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-05T17:39:28.528Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-05T17:39:28.532Z  INFO 10168 --- [GestCantineADA] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11504 ms
+2024-09-05T17:39:29.513Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-05T17:39:29.856Z  INFO 10168 --- [GestCantineADA] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-05T17:39:30.044Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-05T17:39:31.425Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-05T17:39:31.604Z  INFO 10168 --- [GestCantineADA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-05T17:39:33.598Z  INFO 10168 --- [GestCantineADA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fbb998f
+2024-09-05T17:39:33.602Z  INFO 10168 --- [GestCantineADA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-05T17:39:33.915Z  WARN 10168 --- [GestCantineADA] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-05T17:39:37.195Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-05T17:39:37.639Z  INFO 10168 --- [GestCantineADA] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-05T17:39:38.707Z  WARN 10168 --- [GestCantineADA] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'platController' defined in file [C:\Users\BINO BINO\Desktop\GestCantineADA\target\classes\com\gestcantine\GestCantineADA\controllers\PlatController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'platService' defined in file [C:\Users\BINO BINO\Desktop\GestCantineADA\target\classes\com\gestcantine\GestCantineADA\services\implementations\PlatService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gestcantine.GestCantineADA.mapping.contracts.IPlatMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-09-05T17:39:38.709Z  INFO 10168 --- [GestCantineADA] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-05T17:39:38.739Z  INFO 10168 --- [GestCantineADA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-05T17:39:38.792Z  INFO 10168 --- [GestCantineADA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-09-05T17:39:38.799Z  INFO 10168 --- [GestCantineADA] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-09-05T17:39:38.852Z  INFO 10168 --- [GestCantineADA] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-09-05T17:39:39.102Z ERROR 10168 --- [GestCantineADA] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gestcantine.GestCantineADA.services.implementations.PlatService required a bean of type 'com.gestcantine.GestCantineADA.mapping.contracts.IPlatMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.gestcantine.GestCantineADA.mapping.contracts.IPlatMapper' in your configuration.
+
