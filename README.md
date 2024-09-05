@@ -55,7 +55,7 @@ The application provides the following endpoints for managing `Menu` and `Plat` 
 
 2. Navigate into the project directory:
     ```bash
-    cd cantine-management
+    cd GestCantineADA
     ```
 
 3. Build the project using Maven:
