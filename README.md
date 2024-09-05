@@ -68,7 +68,7 @@ The application provides the following endpoints for managing `Menu` and `Plat` 
     mvn spring-boot:run
     ```
 
-5. Open your browser and access the application endpoints.
+5. Open your browser to `http://localhost:8080/` and access the application endpoints.
 
 ## Technologies Used
 
