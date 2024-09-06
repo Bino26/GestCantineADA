@@ -1,4 +1,0 @@
-2024-09-06T01:55:42.123Z  WARN 600 --- [GestCantineADA] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h11m36s631ms691µs700ns).
-2024-09-06T01:57:16.846Z  INFO 600 --- [GestCantineADA] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-09-06T01:57:17.429Z  INFO 600 --- [GestCantineADA] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-09-06T01:57:18.093Z  INFO 600 --- [GestCantineADA] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
