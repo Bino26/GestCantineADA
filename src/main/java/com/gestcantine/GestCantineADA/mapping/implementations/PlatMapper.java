@@ -9,13 +9,14 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
 @Component
+@RequiredArgsConstructor
 public class PlatMapper implements IPlatMapper {
-    private ModelMapper modelMapper ;
+    private final ModelMapper modelMapper ;
 
     @Override
     public PlatDTO toDto(Plat entity) {
+
         return modelMapper.map(entity, PlatDTO.class);
     }
 

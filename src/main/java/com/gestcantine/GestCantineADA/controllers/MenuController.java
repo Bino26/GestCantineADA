@@ -7,10 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -26,9 +23,7 @@ public class MenuController {
     }
 
     @GetMapping("/add")
-    public String showAddPMenuPage(HttpServletRequest request, Model model){
-        String currentUrl = request.getRequestURI();
-        model.addAttribute("currentUrl", currentUrl);
+    public String showAddPMenuPage(Model model){
         model.addAttribute("menu", new MenuDTO());
         return "pages/forms";
     }
@@ -40,10 +35,8 @@ public class MenuController {
     }
 
     @GetMapping("/{id}")
-    public String showUpdateMenuForm(HttpServletRequest request, Model model, @PathVariable Long id){
-        String currentUrl = request.getRequestURI();
+    public String showUpdateMenuForm(Model model, @PathVariable Long id){
         Optional<MenuDTO> menu = menuService.getMenuById(id);
-        model.addAttribute("currentUrl", currentUrl);
         if(menu.isPresent()){
             model.addAttribute("menu", menu.get());
             return "pages/forms";
@@ -52,7 +45,7 @@ public class MenuController {
         }
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteMenu(@PathVariable Long id){
         menuService.deleteMenu(id);
         return "redirect:/menus";

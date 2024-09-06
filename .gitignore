@@ -31,4 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+###Logging####
 Cantine_ADA.log
+*Cantine_ADA.log*

@@ -7,10 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -21,41 +18,39 @@ public class PlatController {
 
     private final PlatService platService ;
     @GetMapping
-    public String displayMenuPage(){
-        return "pages/menus";
+    public String displayPlatPage(){
+        return "plats/plats";
     }
 
     @GetMapping("/add")
-    public String showAddPMenuPage(HttpServletRequest request, Model model){
-        String currentUrl = request.getRequestURI();
-        model.addAttribute("currentUrl", currentUrl);
-        model.addAttribute("menu", new MenuDTO());
-        return "pages/forms";
+    public String showAddPlatPage(Model model){
+        model.addAttribute("plat", new PlatDTO());
+        return "plats/forms";
     }
 
     @PostMapping
-    public String createPlat(PlatDTO plat){
+    public String createPlat( PlatDTO plat){
         platService.createPlat(plat);
         return "redirect:/plats";
     }
 
     @GetMapping("/{id}")
-    public String showUpdatePlatForm(HttpServletRequest request, Model model, @PathVariable Long id){
-        String currentUrl = request.getRequestURI();
+    public String showUpdatePlatForm( Model model, @PathVariable Long id){
         Optional<PlatDTO> plat = platService.getPlatById(id);
-        model.addAttribute("currentUrl", currentUrl);
         if(plat.isPresent()){
-            model.addAttribute("menu", plat.get());
+            model.addAttribute("plat", plat.get());
             return "pages/forms";
         }else {
             return "redirect:/plats";
         }
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deletePlat(@PathVariable Long id){
         platService.deletePlat(id);
         return "redirect:/plats";
     }
+
+
 
 }

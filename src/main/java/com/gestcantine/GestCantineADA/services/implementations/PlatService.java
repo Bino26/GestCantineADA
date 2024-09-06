@@ -6,11 +6,13 @@ import com.gestcantine.GestCantineADA.models.Menu;
 import com.gestcantine.GestCantineADA.models.Plat;
 import com.gestcantine.GestCantineADA.repositories.PlatRepository;
 import com.gestcantine.GestCantineADA.services.contracts.IPlatService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor

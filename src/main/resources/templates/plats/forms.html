@@ -51,7 +51,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white " href="menus.html">
+                <a class="nav-link text-white " href="../menus/menus.html">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <span class="material-symbols-outlined">menu_book</span>
@@ -63,7 +63,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white " href="plats.html">
+                <a class="nav-link text-white " href="../plats/plats.html">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <span class="material-symbols-outlined">local_cafe</span>
@@ -90,16 +90,18 @@
                                 <h4 class="font-weight-bolder">Formulaire d'enregistrement</h4>
                             </div>
                             <div class="card-body">
-                                <form role="form">
+                                <form role="form" th:action="@{/plats}" method="post" th:object="${plat}">
+                                    <input type="text" th:field="*{id}" hidden>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Libelle</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" th:field="*{name}">
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <input type="date" class="form-control">
+                                        <label class="form-label">Summary</label>
+                                        <input type="text" class="form-control" th:field="*{summary}">
                                     </div>
                                     <div class="text-center">
-                                        <button type="button"
+                                        <button type="submit"
                                                 class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">
                                             Enregistrer
                                         </button>
