@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -18,7 +19,8 @@ public class PlatController {
 
     private final PlatService platService ;
     @GetMapping
-    public String displayPlatPage(){
+    public String displayPlatPage(Model model){
+        model.addAttribute("plats",platService.getAllPlats());
         return "plats/plats";
     }
 
@@ -28,6 +30,19 @@ public class PlatController {
         return "plats/forms";
     }
 
+    @GetMapping("/search")
+    public String searchPlats(@RequestParam(value = "name", required = false) String name, Model model) {
+        List<PlatDTO> plats;
+
+        if (name != null && !name.isEmpty()) {
+            plats = platService.searchPlatsByName(name);
+        } else {
+            plats = platService.getAllPlats();
+        }
+
+        model.addAttribute("searchTerm", plats);
+        return "plats/listbyname";
+    }
     @PostMapping
     public String createPlat( PlatDTO plat){
         platService.createPlat(plat);
@@ -45,7 +60,7 @@ public class PlatController {
         }
     }
 
-    @DeleteMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
     public String deletePlat(@PathVariable Long id){
         platService.deletePlat(id);
         return "redirect:/plats";

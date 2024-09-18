@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -35,6 +36,14 @@ public class PlatService implements IPlatService {
     @Override
     public Optional<PlatDTO> getPlatById(Long id) {
         return platRepository.findById(id).map(platMapper::toDto);
+    }
+
+    @Override
+    public List<PlatDTO> searchPlatsByName(String name) {
+        List<Plat> plats = platRepository.findByNameContainingIgnoreCase(name);
+        return plats.stream()
+                .map(platMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @Override

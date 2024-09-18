@@ -1,12 +1,11 @@
 package com.gestcantine.GestCantineADA.dtos;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class PlatDTO {
     private Long id;
     private String name;

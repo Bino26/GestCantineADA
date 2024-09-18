@@ -10,6 +10,7 @@ public interface IPlatService {
     List<PlatDTO> getAllPlats();
     PlatDTO createPlat(PlatDTO plat);
    Optional<PlatDTO>  getPlatById(Long id);
+   List<PlatDTO> searchPlatsByName(String name);
     PlatDTO updatePlat(Long id, PlatDTO plat);
     void deletePlat(Long id);
 }

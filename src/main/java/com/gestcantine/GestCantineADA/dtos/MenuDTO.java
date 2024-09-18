@@ -1,14 +1,17 @@
 package com.gestcantine.GestCantineADA.dtos;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import com.gestcantine.GestCantineADA.models.Plat;
+import lombok.*;
 
 import java.util.Date;
 
 @Data
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class MenuDTO {
 
     private Long id;
     private Date creationDate;
+    private Plat plat ;
 }

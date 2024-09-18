@@ -18,7 +18,8 @@ public class MenuController {
     private final MenuService menuService ;
 
     @GetMapping
-    public String displayMenuPage(){
+    public String displayMenuPage(Model model){
+        model.addAttribute("menus",menuService.getAllMenus());
         return "pages/menus";
     }
 

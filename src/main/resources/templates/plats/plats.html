@@ -87,15 +87,24 @@
               <a class="btn btn-outline-warning btn-sm mb-0 me-3" th:href="@{/plats/add}">Ajouter un plat</a>
             </li>
           </ul>
+
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group input-group-outline">
-              <label class="form-label">Recherche par nom</label>
-              <input type="text" class="form-control">
+              <form th:action="@{/plats/search}" method="get">
+                <input type="text" name="name" class="form-control" th:value="${searchTerm}" placeholder="Rechercher par nom">
+                <button type="submit" class="btn btn-outline-primary btn-sm mb-0 me-3">Recherche</button>
+              </form>
+
+              <!--              <form th:action="@{/plats/search}" method="get">-->
+<!--              <label class="form-label" >Recherche par nom</label>-->
+<!--              <input type="text" name="name" class="form-control" th:value="${searchTerm}">-->
+<!--                <button class="btn btn-outline-primary btn-sm mb-0 me-3">Recherche</button>-->
+<!--              </form>-->
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <button class="btn btn-outline-primary btn-sm mb-0 me-3">Recherche</button>
+
             </li>
           </ul>
         </div>
@@ -108,7 +117,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-warning shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Liste des plats (1)</h6>
+                <h6 class="text-white text-capitalize ps-3">Liste des plats (<span th:text="${plats.size()}"></span>)</h6>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -117,34 +126,31 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Libelle</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 align-items-center"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 align-items-center">Summary</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr th:each="plat : ${plats}">
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">ATTIEKE AU POULET</h6>
+                            <h6 class="mb-0 text-sm" th:text="${plat.name}"></h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm" th:text="${plat.summary}"></h6>
                           </div>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <button class="badge badge-sm bg-gradient-success">Modifier</button>
-                        <button class="badge badge-sm bg-gradient-danger">Supprimer</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">GARBA SANS HUILE</h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <button class="badge badge-sm bg-gradient-success">Modifier</button>
-                        <button class="badge badge-sm bg-gradient-danger">Supprimer</button>
+                          <form th:action="@{/plats/delete/{id}(id=${plat.id})}" method="post">
+                              <input type="hidden" name="_method" value="delete"/>
+                              <button class="badge badge-sm bg-gradient-danger">Supprimer</button>
+                          </form>
                       </td>
                     </tr>
                   </tbody>
